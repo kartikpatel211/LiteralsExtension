@@ -35,7 +35,7 @@ extension TextConverter {
 
 extension XCSourceEditorCommandInvocation {
    fileprivate var selections: [XCSourceTextRange] {
-      let selections = self.buffer.selections.flatMap { $0 as? XCSourceTextRange }
+    let selections = self.buffer.selections.compactMap { $0 as? XCSourceTextRange }
 
       if selections.isEmpty {
          return [self.bufferRange]

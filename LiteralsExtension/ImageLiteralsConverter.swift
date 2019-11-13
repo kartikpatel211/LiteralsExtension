@@ -9,7 +9,7 @@ struct ImageLiteralsConverter: TextConverter {
                                        range: range)
 
       for match in matches.reversed() {
-         var name = result.substring(with: match.rangeAt(1))
+        var name = result.substring(with: match.range(at: 1))
          let pathExtension = (name as NSString).pathExtension
          if pathExtension.isEmpty {
             name = name + ".png"

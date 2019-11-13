@@ -10,10 +10,10 @@ struct ColorLiteralsConverter: TextConverter {
 
       for match in matches.reversed() {
          let components = [
-            ("red", result.substring(with: match.rangeAt(1))),
-            ("green", result.substring(with: match.rangeAt(2))),
-            ("blue", result.substring(with: match.rangeAt(3))),
-            ("alpha", result.substring(with: match.rangeAt(4)))
+            ("red", result.substring(with: match.range(at: 1))),
+            ("green", result.substring(with: match.range(at: 2))),
+            ("blue", result.substring(with: match.range(at: 3))),
+            ("alpha", result.substring(with: match.range(at: 4)))
             ]
             .map { "\($0): \($1.evaluate())" }
             .joined(separator: ", ")
